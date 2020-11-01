@@ -11,6 +11,7 @@ class Plantas {
 	}
 	
 	method cosechate() { 
+		toni.position(self.position())
 		game.removeVisual(self) 
 		toni.plantasCosechadas().add(self) 
 		toni.plantasSembradas().remove(self)

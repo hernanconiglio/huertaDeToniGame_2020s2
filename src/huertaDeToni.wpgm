@@ -8,7 +8,6 @@ import mercados.*
 program huertaDeToni {
 	game.width(15)
 	game.height(15)
-
 		
 	// Configuramos una imagen de fondo, que se repite para cada celda del tablero.
 	game.ground("tierra.png")
@@ -17,7 +16,7 @@ program huertaDeToni {
 	
 	game.whenCollideDo(pachamama,{ elChaboncito => toni.hacerOfrenda(pachamama) } )
 	
-	
+
 	
 	// Agregamos al amigo Toni.
 	//game.addVisual(toni)

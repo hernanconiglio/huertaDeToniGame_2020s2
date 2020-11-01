@@ -23,8 +23,8 @@ object juego {
 		keyboard.a().onPressDo({ toni.regarLasPlantas() })
 		keyboard.v().onPressDo({ toni.venderEnMercado() })
 		keyboard.space().onPressDo({
-			game.say(toni,"Tengo " + toni.oroObtenido() + " de oro obtenido " + 
-			" y me quedan " + toni.plantasCosechadas().size() + " plantas para vender")
+			game.say(toni,"Tengo " + toni.oroObtenido() + " de oro " + 
+			" y quedan " + toni.plantasCosechadas().size() + " plantas por vender")
 		})
 		self.configurarMovimiento()
 		

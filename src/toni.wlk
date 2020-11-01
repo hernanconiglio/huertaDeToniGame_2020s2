@@ -16,20 +16,29 @@ object toni {
 	// Pegar acá todo lo que tenían de Toni en la etapa 1
 	
 	method sembrarMaiz() {
+		if (not self.listaDePosicionesSembrdas().contains(self.position()) ) {
 			plantasSembradas.add(new Maiz(position=self.position()))
-			game.addVisual(plantasSembradas.last())		
+			game.addVisual(plantasSembradas.last())	
+		}
+		else self.error("Ya hay siembra")	
 	}		
 
 	
 	method sembrarTrigo() {
+		if (not self.listaDePosicionesSembrdas().contains(self.position()) ) {
 			plantasSembradas.add(new Trigo(position=self.position()))
-			game.addVisual(plantasSembradas.last())		
+			game.addVisual(plantasSembradas.last())
+		}
+		else self.error("Ya hay siembra")		
 	}		
 
 
 	method sembrarTomaco() {
+		if (not self.listaDePosicionesSembrdas().contains(self.position()) ) {
 			plantasSembradas.add(new Tomaco(position=self.position()))
-			game.addVisual(plantasSembradas.last())		
+			game.addVisual(plantasSembradas.last())
+		}
+		else self.error("Ya hay siembra")		
 	}		
 
 
@@ -53,19 +62,23 @@ object toni {
 			plantasCosechadas.add(planta)
 			plantasSembradas.remove(planta)						
 		}
-		else { self.error("Toni no puede cosechar si no hay planta Cosechable")}		
+		else if (self.estaEnPlantaSembrada()) { self.error("No está lista para cosechar") }
+		else { self.error("Acá NO hay planta") }		
 	}
 
 //		*** Métodos para validar que está en planta cosechable ************	
 	method estaEnPlantaCosechable() { return self.listaDePosicionesCosechables().contains(self.position()) }
 	method listaDePosicionesCosechables() { return self.plantasListasParaCosechar().map( { p=>p.position() } ) }
+	method estaEnPlantaSembrada() { return self.listaDePosicionesSembrdas().contains(self.position()) }
+	method listaDePosicionesSembrdas() { return self.plantasSembradas().map( { p=>p.position() } ) }
 
 //		***********************************************************************
 
 	method cosecharTodo() {
-		self.plantasListasParaCosechar()       .forEach( { p=>p.cosechate() } )
+		self.plantasListasParaCosechar().forEach( { p=>p.cosechate() } )
+		game.say(self,"Total " + plantasCosechadas.size() + " plantas cosechadas")
 	}
-	
+
 	method valorCosecha() {
 		return plantasCosechadas.sum( { p=>p.cuantoOroDa() } )
 	}
