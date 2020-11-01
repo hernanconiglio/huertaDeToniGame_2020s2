@@ -4,6 +4,9 @@ import toni.*
 import pachamama.*
 import mercados.*
 
+const mercadoCentral = new Mercado(oro=1000,position=game.at(13,7)) 
+const mercadoChino = new Mercado(oro=10,position=game.at(1,7),image="mercado_chino_opt.png")		
+
 object juego {
 	var property personajeActual = toni
 	

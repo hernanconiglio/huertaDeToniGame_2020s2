@@ -109,12 +109,12 @@ object toni {
 	}
 	
 	method venderEnMercado() {
-		if(position == mercadoCentral.position() ) 
-		{ mercadoCentral.aceptarCompra() }
-		else if (position == mercadoChino.position()) 
-			{ mercadoChino.aceptarCompra() }
-		else{ self.error("no hay ningun mercado")}
-	}	
+		if (self.valorCosecha() == 0) { self.error("Nada para Vender") }
+			else if(position == mercadoCentral.position() ) { mercadoCentral.aceptarCompra() }
+			else if (position == mercadoChino.position()) { mercadoChino.aceptarCompra() }
+			else { self.error("no hay ningun mercado") }
+	}
+		
 	
 	
 }
