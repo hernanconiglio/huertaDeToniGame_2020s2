@@ -16,7 +16,10 @@ program huertaDeToni {
 	
 	game.whenCollideDo(pachamama,{ elChaboncito => toni.hacerOfrenda(pachamama) } )
 	
-
+	game.showAttributes(mercadoCentral)
+	game.showAttributes(mercadoChino)
+	game.showAttributes(pachamama)
+	game.showAttributes(toni)
 	
 	// Agregamos al amigo Toni.
 	//game.addVisual(toni)

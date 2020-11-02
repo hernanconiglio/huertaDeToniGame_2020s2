@@ -11,7 +11,6 @@ object toni {
 	var property plantasCosechadas = []
 	var property oroObtenido = 0
 	var property gastoDiario = 200
-
 		
 	// Pegar acá todo lo que tenían de Toni en la etapa 1
 	
