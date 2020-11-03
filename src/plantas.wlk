@@ -65,8 +65,6 @@ class Trigo inherits Plantas {
 	}
 	
 	method regar() {
-//		if (etapa.between(0,2)) { etapa += 1}
-//		else { etapa=0 }
 		if (pachamama.estaAgradecida()) { etapa = (etapa + 2).rem(4) }
 		else { etapa = (etapa + 1).rem(4) }	
 	}

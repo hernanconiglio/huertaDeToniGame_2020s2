@@ -3,7 +3,7 @@ import toni.*
 
 
 class Mercado {
-	var property image = "mercado.png"
+	var property image
 	var property position
 	var property oro
 	var property mercaderia = []

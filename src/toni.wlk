@@ -5,7 +5,7 @@ import mercados.*
 import visualYMovimientos.*
 
 object toni {
-	const property image = "toni.png"
+	var property image = "toni.png"
 	var property position = game.at(3, 3)
 	var property plantasSembradas = []
 	var property plantasCosechadas = []
